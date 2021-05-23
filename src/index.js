@@ -8,30 +8,21 @@ import './index.css'
 
 function App() {
     return <section className="booklist"> 
-        <Book/>
-        
+        <Book link="https://images-eu.ssl-images-amazon.com/images/I/61r-WomIz0L._AC_UL200_SR200,200_.jpg" title='One Arranged Murder' author='Chetan Bhagat' />
+        <Book link='https://images-eu.ssl-images-amazon.com/images/I/71aFt4%2BOTOL._AC_UL200_SR200,200_.jpg' title='The Alchemist' author='Paulo Coelho' />
+        <Book link='https://images-eu.ssl-images-amazon.com/images/I/71JZ0neAP1L._AC_UL200_SR200,200_.jpg' title='The Blue Umbrella' author='Ruskin Bond' />
         </section>
 
 }
 
 
-function Book(url, title, author) {
+function Book(props) {
     return <article className="book">
-        <Image/>
-        <Title/>
-        <Author/>
+        <img src={props.link} alt="" />
+        <h1>{props.title}</h1>
+        <h4 style={{color:'#617d98', fontSize:'0.75rem', margin:'0.25rem'}}>{props.author}</h4>
         <hr/>
     </article>
-}
-
-function Image(link) {
-    return <img src="https://images-eu.ssl-images-amazon.com/images/I/61r-WomIz0L._AC_UL200_SR200,200_.jpg" alt="" />
-}
-
-const Title = (text) => <h1>One Arranged Murder</h1>
-
-function Author(name) {
-    return <h4 style={{color:'#617d98', fontSize:'0.75rem', margin:'0.25rem'}}>Chetan Bhagat</h4>
 }
 
 
